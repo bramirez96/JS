@@ -16,10 +16,41 @@
 	var sz = "1";
 	var ss = sz + ix; //String + Integer = STRING
 	var xs = parseInt(sz) + 1; //parseInt() NOT JUST int()
-	document.write("<p>x = " + ix +".</p>"); //ONE PARAMETER
-	document.write(sx, ix, sy); //THREEEEEEEE PARAMETEEEERS BITCH
+	var bx = true; //Boolean
+	var by = false; //Boolean
+	var fx = 3.21e1; //Scientific Notation Float
+	//Output Below
+	document.write("<p>x = " + ix +".</p>"); //ONE CONCATENATED PARAMETER
+	document.write(sx, ix, sy); //THREEEEEEEE AUTOMATICALLY CONCATENATED PARAMETEEEERS BITCH
 	document.write(sx, ss, sy);
 	document.write(sx, xs, sy);
+	document.write(sx, bx, ", y = ", by, sy);
+	document.write(sx, fx, sy);
+	//Value Calculation
+	var pv = 100; //Present value in $
+	var i = 0.08; //Interest rate = 8%
+	var n = 9; //Number of compounding periods
+	var fv = pv * Math.pow(1 + i, n);
+	document.write("<p>Future Value = $", fv.toFixed(2), sy); //toFixed changes float
+	//Ternary Operator
+	var hours = 21; //Hours worked
+	var payRate = 15; //Pay Rate in $/hr
+	var dblTime = 20;
+	var payCheck = 	hours < 0 ? 0 :
+					hours < dblTime ? hours * payRate : 
+					dblTime * payRate + 2 * (hours - dblTime) * payRate;
+	document.write("<p>Paycheck is $", payCheck.toFixed(2), " in total.</p>");
+	
+	/*
+		HOMEWORK
+		Same as with PHP... Gonna be so easy :)
+	*/
+	var score = 80;
+	var grade = score < 60 ? "F" :
+				score < 70 ? "D" :
+				score < 80 ? "C" :
+				score < 90 ? "B" : "A";
+	document.write("<p>Your grade is ", grade, ".</p>");
 </script>
 </body>
 </html>
