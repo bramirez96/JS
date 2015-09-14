@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>What's Your Grade?</title>
-</head>
-<body>
-<script type="text/javascript">
-	//Function that takes user input
-	function findGrade() {
-		var score = prompt("What's your score?");
-		var grade = score < 60 ? "an F" :
-					score < 70 ? "a D"  :
-					score < 80 ? "a C"  :
-					score < 90 ? "a B"  : 
-								 "an A";
-		document.write("<p>Your grade is " + grade + ".</p>");
-	}
-	findGrade();
-</script>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>What's Your Grade?</title>
+		<!--
+			Brandon Ramirez 09/14/2015
+			RCC JavaScript Class
+			Version 1.2
+			Purpose: Ternary Operator Examples
+		-->
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Function that takes user input
+			var score = prompt("What's your score?");
+			var grade = score <   0  ? "invalid" :
+						score <  60  ? "an F" 	 :
+						score <  70  ? "a D"  	 :
+						score <  80  ? "a C" 	 :
+						score <  90  ? "a B" 	 : 
+						score <= 100 ? "an A"	 :
+									   "invalid";
+			document.write("<p>Your grade is " + grade + ".</p>");
+		</script>
+	</body>
 </html>
