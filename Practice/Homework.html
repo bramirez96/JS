@@ -6,23 +6,6 @@
 </head>
 <body>
 <script type="text/javascript">
-	var score = 80;
-	var grade = score < 60 ? "an F" :
-				score < 70 ? "a D"  :
-				score < 80 ? "a C"  :
-				score < 90 ? "a B"  : 
-                             "an A";
-	document.write("<p>Your grade is ", grade, ".</p>");
-	//Function version because the syllabus mentioned grading on code from other chapters
-	function myGrade(score) {
-		var grade = score < 60 ? "an F" :
-					score < 70 ? "a D"  :
-					score < 80 ? "a C"  :
-					score < 90 ? "a B"  : 
-								 "an A";
-		document.write("<p>Your grade is " + grade + ".</p>");
-	};
-	myGrade(100);
 	//Function that takes user input
 	function findGrade() {
 		var score = prompt("What's your score?");
