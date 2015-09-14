@@ -12,16 +12,42 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			//Input numeric score, and output grade if valid value is recieved.
-			var score = prompt("What's your score?");
-			var grade = score <    0 ? "invalid" :
-						score <   60 ? "an F" 	 :
-						score <   70 ? "a D"  	 :
-						score <   80 ? "a C" 	 :
-						score <   90 ? "a B" 	 : 
-						score <= 100 ? "an A"	 :
-									   "invalid";
-			document.write("<p>Your grade is " + grade + ".</p>");
+			/*
+				//Ternary Operator Example
+				var score = prompt("What's your score?");
+				var grade = score <    0 ? "invalid" :
+							score <   60 ? "an F" 	 :
+							score <   70 ? "a D"  	 :
+							score <   80 ? "a C" 	 :
+							score <   90 ? "a B" 	 : 
+							score <= 100 ? "an A"	 :
+										   "invalid";
+				document.write("<p>Your grade is " + grade + ".</p>");
+			*/
+			/*
+				//If-Else Construct Example
+				var score = prompt("What's your score?");
+				var grade;
+				if 		(score <    0) grade = "invalid";
+				else if (score <   60) grade = "an F";
+				else if (score <   70) grade = "a D";
+				else if (score <   80) grade = "a C";
+				else if (score <   90) grade = "a B";
+				else if (score <= 100) grade = "an A";
+				else 				   grade = "invalid";
+				document.write("<p>Your grade is " + grade + ".</p>");
+			*/
+			/*
+				//Switch Construct Example
+				var score  = prompt("What's your score?");
+				var grade;
+				var iscore = Math.floor(score/10);
+				switch (iscore) {
+					case 0:
+				}
+			*/
+			
+			//FINISH THIS THING ^^^^^^^^^
 		</script>
 	</body>
 </html>
