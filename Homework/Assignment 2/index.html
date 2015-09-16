@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Paycheck</title>
+		<!--
+		
+			Brandon Ramirez
+			CIS14a - JavaScript Programming
+			09/16/2015 Version 1.0
+			Purpose: Demonstrate knowledge of JavaScript Switches
+			
+		-->
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			//Variable Declaration/Input
+			var wage = 15;                                                                   //Given in $/hr
+			var hrs  = prompt("How many hours did you work?");                               //Hours worked
+			if      (isNaN(hrs))   var str = "You did not enter a number!";                  //Non-numeric value entered
+			else if (hrs < 0)      var str = "You did not enter a valid number!" ;           //Negative number entered
+			else if (hrs == "")    var str = "You did not input any value!";                 //No input
+			else {                                                                           //Recieved valid numerical input
+				var check = (hrs ==  0) ? 0 								  :              //0 hours
+							(hrs <= 20) ? hrs * wage 						  :              //Straight Time
+							(hrs <= 40) ? 20 * wage + (hrs - 20) * wage * 2   :              //Double Time
+										  20 * wage + 20 * 2 * wage + (hrs - 40) * wage * 3; //Triple Time
+				var str = "Your paycheck is for $" + check + "!";
+			};
+			document.write("<p>"+str+"</p>");
+		</script>
+		
+	</body>
+</html>
