@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Be the Browser</title>
+		<!--
+			
+			Basic code examples from the book, debugged.
+		
+		-->
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+			var joke 		= "Javascript walked into a bar...";
+			var toldJoke 	= false; //Changed from a string to a boolean
+			var $punchline  = "Better watch out for those semi-colons.";
+			var percentage 	= 20; //Fixed variable name syntax error, can't use %
+			var result;			  //Added semicolon at the end
+			if (toldJoke == true) alert($punchline);
+			else 				  alert(joke); //Removed uneccessary code
+			
+			//Next block
+			var zipCode 		  = 98104; //Removed space from variable name
+			var joesFavoriteMovie = "Forbidden Planet"; //Removed illegal character in variable name, put string in quotes
+			var movieTicket$	  = 9;
+			if (movieTicket$ >= 9) {
+				alert("Too much!");
+			}
+			else {
+				alert("We're going to see "+joesFavoriteMovie);
+			}
+			
+		</script>
+	</body>
+</html>
