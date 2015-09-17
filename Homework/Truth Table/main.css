@@ -1,0 +1,31 @@
+body {
+	background-color: #3a4145;
+}
+table#main {
+	border-collapse: collapse;
+}
+table#main tr:first-of-type td {
+	background-color: #a35a28;
+	color: #e5e2c3;
+	font-size: 16px;
+}
+table#main tr td {
+	padding: 5px 10px;
+	font-family: "Tahoma", sans-serif;
+	font-size: 12px;
+	background-color: #fff;
+	border: 1px solid #2b2b23;
+	text-align: center;
+	color: #000;
+}
+table#main tr td.alt {
+	background-color: #5e9fb5;
+}
+table#main tr td.alt2 {
+	background-color: #c8a353;
+	color: ;
+}
+table#main tr td.empty {
+	background-color: rgba(0,0,0,0);
+	bordeR: 0px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Truth Table</title>
+		<!--
+			
+			Brandon Ramirez
+			CIS-14a - JavaScript Programming
+			09/16/2015 v1.0
+			Purpose: To create a table that takes true/false inputs and populates with solutions to boolean expressions.
+			
+		-->
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<script type="text/javascript">
+			function changeTest() {
+				var x = (document.getElementById("xVal").value == 0) ? true : false; //Sets x to boolean value equivalent to selection
+				var y = (document.getElementById("yVal").value == 0) ? true : false; //Sets y to boolean value equivalent to selection
+				//Changes all table values based on x and y inputs recieved
+				document.getElementById("nX").innerHTML 	= (!x) 			? "T" : "F";
+				document.getElementById("nY").innerHTML 	= (!y) 			? "T" : "F";
+				document.getElementById("XaY").innerHTML 	= (x && y) 		? "T" : "F";
+				document.getElementById("XoY").innerHTML 	= (x || y) 		? "T" : "F";
+				document.getElementById("XxY").innerHTML 	= (x ^ y) 		? "T" : "F";
+				document.getElementById("XxYxX").innerHTML 	= (x ^ y ^ x) 	? "T" : "F";
+				document.getElementById("XxYxY").innerHTML 	= (x ^ y ^ y)	? "T" : "F";
+				document.getElementById("NXaY").innerHTML 	= (!(x && y)) 	? "T" : "F";
+				document.getElementById("nXonY").innerHTML 	= (!x || !y) 	? "T" : "F";
+				document.getElementById("NXoY").innerHTML 	= (!(x || y)) 	? "T" : "F";
+				document.getElementById("nXanY").innerHTML 	= (!x && !y) 	? "T" : "F";
+			}
+		</script>
+	</head>
+	<body onload="changeTest()">
+		<table id="main">
+			<tr>
+				<td>x</td>
+				<td>y</td>
+				<td>!x</td>
+				<td>!y</td>
+				<td>x && y</td>
+				<td>x || y</td>
+				<td>x ^ y</td>
+				<td>x ^ y ^ x</td>
+				<td>x ^ y ^ y</td>
+				<td>!(x && y)</td>
+				<td>!x || !y</td>
+				<td>!(x || y)</td>
+				<td>!x && !y</td>
+			</tr>
+			<tr>
+				<td id="X" class="alt">
+					<select id="xVal" onchange="changeTest()">
+						<option value="0">T</option>
+						<option value="1">F</option>
+					</select>
+				</td>
+				<td id="Y" class="alt">
+					<select id="yVal" onchange="changeTest()">
+						<option value="0">T</option>
+						<option value="1">F</option>
+					</select>
+				</td>
+				<td id="nX"></td>
+				<td id="nY"></td>
+				<td id="XaY"></td>
+				<td id="XoY"></td>
+				<td id="XxY"></td>
+				<td id="XxYxX"></td>
+				<td id="XxYxY"></td>
+				<td id="NXaY"></td>
+				<td id="nXonY"></td>
+				<td id="NXoY"></td>
+				<td id="nXanY"></td>
+			</tr>
+			<tr>
+				<td colspan="9" class="empty"></td>
+				<td colspan="2" class="alt2">Equal Expressions</td>
+				<td colspan="2" class="alt2">Equal Expressions</td>
+			</tr>
+			<tr>
+				<td colspan="9" class="empty"></td>
+				<td colspan="4" class="alt">De Morgan's Law</td>
+			</tr>
+		</table>
+	</body>
+</html>
