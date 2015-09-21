@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Truth Table</title>
+		<!--
+			Brandon Ramirez
+			CIS14a - JavaScript Programming
+			09/21/2015 v1.0
+			Purpose: Create a truth table
+		-->
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+				font-family: "Arial", sans-serif;
+				font-weight: 700;
+			}
+			table tr td, table tr th {
+				border: 1px solid black;
+				padding: 5px 10px;
+				text-align: center;
+				font-size: .8em;
+			}
+			table tr th {
+				font-size: 16px;
+				background-color: #000;
+				color: #fff;
+				border-width: 0 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>X</th>
+				<th>Y</th>
+				<th>!X</th>
+				<th>!Y</th>
+				<th>X && Y</th>
+				<th>X || Y</th>
+				<th>X ^ Y</th>
+				<th>X ^ Y ^ Y</th>
+				<th>X ^ Y ^ X</th>
+				<th>!(X && Y)</th>
+				<th>!X || !Y</th>
+				<th>!(X || Y)</th>
+				<th>!X && !Y</th>
+			</tr>
+			<tr>
+				<script type="text/javascript">
+					var x = true;
+					var y = true;
+					document.write("<td>"+(x?"T":"F")+"</td>");
+					document.write("<td>"+(y?"T":"F")+"</td>");
+					document.write("<td>"+(!x?"T":"F")+"</td>");
+					document.write("<td>"+(!y?"T":"F")+"</td>");
+					document.write("<td>"+(x && y?"T":"F")+"</td>");
+					document.write("<td>"+(x || y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ x?"T":"F")+"</td>");
+					document.write("<td>"+(!(x && y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x || !y?"T":"F")+"</td>");
+					document.write("<td>"+(!(x || y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x && !y?"T":"F")+"</td>");
+				</script>
+			</tr>
+			<tr>
+				<script type="text/javascript">
+					var x = true;
+					var y = false;
+					document.write("<td>"+(x?"T":"F")+"</td>");
+					document.write("<td>"+(y?"T":"F")+"</td>");
+					document.write("<td>"+(!x?"T":"F")+"</td>");
+					document.write("<td>"+(!y?"T":"F")+"</td>");
+					document.write("<td>"+(x && y?"T":"F")+"</td>");
+					document.write("<td>"+(x || y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ x?"T":"F")+"</td>");
+					document.write("<td>"+(!(x && y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x || !y?"T":"F")+"</td>");
+					document.write("<td>"+(!(x || y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x && !y?"T":"F")+"</td>");
+				</script>
+			</tr>
+			<tr>
+				<script type="text/javascript">
+					var x = false;
+					var y = true;
+					document.write("<td>"+(x?"T":"F")+"</td>");
+					document.write("<td>"+(y?"T":"F")+"</td>");
+					document.write("<td>"+(!x?"T":"F")+"</td>");
+					document.write("<td>"+(!y?"T":"F")+"</td>");
+					document.write("<td>"+(x && y?"T":"F")+"</td>");
+					document.write("<td>"+(x || y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ x?"T":"F")+"</td>");
+					document.write("<td>"+(!(x && y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x || !y?"T":"F")+"</td>");
+					document.write("<td>"+(!(x || y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x && !y?"T":"F")+"</td>");
+				</script>
+			</tr>
+			<tr>
+				<script type="text/javascript">
+					var x = false;
+					var y = false;
+					document.write("<td>"+(x?"T":"F")+"</td>");
+					document.write("<td>"+(y?"T":"F")+"</td>");
+					document.write("<td>"+(!x?"T":"F")+"</td>");
+					document.write("<td>"+(!y?"T":"F")+"</td>");
+					document.write("<td>"+(x && y?"T":"F")+"</td>");
+					document.write("<td>"+(x || y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ y?"T":"F")+"</td>");
+					document.write("<td>"+(x ^ y ^ x?"T":"F")+"</td>");
+					document.write("<td>"+(!(x && y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x || !y?"T":"F")+"</td>");
+					document.write("<td>"+(!(x || y)?"T":"F")+"</td>");
+					document.write("<td>"+(!x && !y?"T":"F")+"</td>");
+				</script>
+			</tr>
+		</table>
+	</body>
+</html>
