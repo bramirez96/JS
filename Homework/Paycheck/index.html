@@ -6,13 +6,67 @@
 		<!--
 			Brandon Ramirez
 			CIS14a - JavaScript Programming
-			09/21/2015 v1.0
+			09/21/2015 v1.2
 			Purpose: Create a table of paycheck values with different payrates using arrays
 		-->
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+				font-family: Arial;
+			} table tr:nth-child(even) {
+				background-color: #ccc;
+			} table tr th, table tr td {
+				border: 1px solid #000;
+				padding: 10px 15px;
+				text-align: center;
+				font-size: .8em;
+				font-weight: 700;
+			} table tr th {
+				background-color: #000;
+				color: #fff;
+				font-size: 1em;
+			}
+		</style>
 	</head>
 	<body>
-		<script type="text/javascript">
-			
-		</script>
+		<table>
+			<script type="text/javascript">
+				//Declare variables and arrays
+				var nHours     = 80; //Max number of hours on table
+				var dblTime    = 20; //Double time starts at
+				var trpTime    = 40; //Triple time starts at
+				var xval, yval, zval;
+				var xRate = 10; //Payrate for col 1
+				var yRate = 20; //Payrate for col 2
+				var zRate = 22.93; //Payrate for col 3
+				document.write("<tr>"); //Create header row with variable rate values
+				document.write("<th>Hours</th>");
+				document.write("<th>$" + xRate + "/hr</th>");
+				document.write("<th>$" + yRate + "/hr</th>");
+				document.write("<th>$" + zRate + "/hr</th>");
+				document.write("</tr>");
+				for (var hour = 0; hour <= nHours; ++hour) {
+					var xval =	hour <= dblTime ? hour    * xRate 								    :
+								hour <= trpTime ? dblTime * xRate + (hour    - dblTime) * xRate * 2 :
+												  dblTime * xRate + (trpTime - dblTime) * xRate * 2 + (hour - trpTime) * xRate * 3;
+					var yval =	hour <= dblTime ? hour    * yRate 								    :
+								hour <= trpTime ? dblTime * yRate + (hour    - dblTime) * yRate * 2 :
+												  dblTime * yRate + (trpTime - dblTime) * yRate * 2 + (hour - trpTime) * yRate * 3;
+					var zval =	hour <= dblTime ? hour    * zRate 								    :
+								hour <= trpTime ? dblTime * zRate + (hour    - dblTime) * zRate * 2 :
+												  dblTime * zRate + (trpTime - dblTime) * zRate * 2 + (hour - trpTime) * zRate * 3;
+					document.write("<tr>");
+					document.write("<td>" + hour + "</td>");
+					document.write("<td>$" + xval.toFixed(2) + "</td>");
+					document.write("<td>$" + yval.toFixed(2) + "</td>");
+					document.write("<td>$" + zval.toFixed(2) + "</td>");
+					document.write("</tr>");
+					/*
+					Future Changes: Put a numbr input in one of the table headers hat
+									auto-populates the column with correct values
+					*/
+				};
+			</script>
+		</table>
 	</body>
 </html>
