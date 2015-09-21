@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>For Loop Table</title>
+		<!--
+			Brandon Ramirez
+			CIS14a - JavaScript Programming
+			09/21/2015 v1.1
+			Purpose: Create a for loop
+		-->
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+				font-family: "Arial", sans-serif;
+				font-weight: 700;
+			}
+			table tr td, table tr th {
+				border: 1px solid black;
+				padding: 5px 10px;
+				text-align: center;
+				font-size: .8em;
+			}
+			table tr th {
+				font-size: 16px;
+				background-color: #000;
+				color: #fff;
+				border-width: 0 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<script type="text/javascript">
+				//Declare Variables
+				var payRate = prompt("Calculate your paycheck\nPayrate in $/hr:");
+				var nHours  = 85; //Hours worked
+				var payChk  = 0;  //Initialize paycheck variable
+				var dblTime = 20; //Hours until double time
+				var trpTime = 40; //Hours until triple time
+			</script>
+			<tr>
+				<th>Hours</th>
+				<th>Paycheck</th>
+			</tr>
+			<script type="text/javascript">
+				//Create table...
+				for (var hours = 0; hours <= nHours; hours++) { //hours increment can be changed easily
+					if (hours <= dblTime) {
+						payChk = hours * payRate;
+					} else if (hours <= trpTime) {
+						payChk = dblTime * payRate + (hours - dblTime) * 2 * payRate;
+					} else {
+						payChk = dblTime * payRate + (trpTime - dblTime) * 2 * payRate + (hours - trpTime) * 3 * payRate;
+					}
+					document.write("<tr>");
+					document.write("<td>" + hours + "</td>");
+					document.write("<td>$" + payChk.toFixed(2) + "</td>");
+					document.write("</tr>")
+				}
+				/*
+					Homework: $10 and $20 payrate columns, yo. Let's do this.
+				*/
+			</script>
+	</body>
+</html>
