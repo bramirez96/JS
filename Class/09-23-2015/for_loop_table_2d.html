@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>For Loop Table</title>
+		<!--
+			Brandon Ramirez
+			CIS14a - JavaScript Programming
+			09/21/2015 v3.0
+			Purpose: Create a for loop using 2-dimensional arrays
+		-->
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+				font-family: "Arial", sans-serif;
+				font-weight: 700;
+			}
+			table tr td, table tr th {
+				border: 1px solid black;
+				padding: 5px 10px;
+				text-align: center;
+				font-size: .8em;
+			}
+			table tr th {
+				font-size: 16px;
+				background-color: #000;
+				color: #fff;
+				border-width: 0 1px;
+			}
+			table tr:nth-child(odd) {
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<script type="text/javascript">
+				//Declare Variables
+				var nHours   = 80; //Hours worked
+				var dblTime  = 20; //Hours until double time
+				var trpTime  = 40; //Hours until triple time
+				var pRateBeg =  5; //Pay rate beginning
+				var pRateEnd = 17; //Pay rate end
+				var pRateInc =  3; //Pay rate increment
+				var payChk   = [];
+				var hrsWrkd  = [];
+				var payRate  = [];
+				//Fill payRate arrays
+				for (var index = 0, rate = pRateBeg; rate <= pRateEnd; index++, rate += pRateInc) {
+					payRate[index] = rate;
+					payChk[index]  =   [];
+				};
+				for (var hours = 0; hours <= nHours; hours++) { //hours increment can be changed easily
+					hrsWrkd[hours] = hours;
+					for (var index = 0; index < payRate.length; index++) {
+						if (hours <= dblTime) { //Sets paycheck value with double and triple time in mind
+							payChk[index][hours] = hours * payRate[index];
+						} else if (hours <= trpTime) {
+							payChk[index][hours] = dblTime * payRate[index] + (hours - dblTime) * 2 * payRate[index];
+						} else {
+							payChk[index][hours] = dblTime * payRate[index] + (trpTime - dblTime) * 2 * payRate[index] + (hours - trpTime) * 3 * payRate[index];
+						}
+					}
+				}; 
+				//Create table...
+				//Header first
+				document.write("<tr>");
+				document.write("<th>Hours</th>");
+				for (var index = 0; index < payRate.length; index++) {
+					document.write("<th>$" + payRate[index] + " / hr</th>");
+				}
+				//Table body
+				for (var hours = 0; hours <= nHours; hours++) { //hours increment can be changed easily
+					document.write("<tr>");
+						document.write("<td>" + hrsWrkd[hours] + "</td>");
+						for (var index = 0; index < payRate.length; index++) {
+							document.write("<td>$" + payChk[index][hours].toFixed(2) + "</td>");
+						}
+					document.write("</tr>")
+				}
+			</script>
+		</table>
+	</body>
+</html>
