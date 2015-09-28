@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>What's Your Grade?</title>
+</head>
+<body>
+<script type="text/javascript">
+	//Function that takes user input
+	function findGrade() {
+		var score = prompt("What's your score?");
+		var grade = score < 60 ? "an F" :
+					score < 70 ? "a D"  :
+					score < 80 ? "a C"  :
+					score < 90 ? "a B"  : 
+								 "an A";
+		document.write("<p>Your grade is " + grade + ".</p>");
+	}
+	findGrade();
+</script>
+</body>
+</html>
