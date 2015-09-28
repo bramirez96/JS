@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Paycheck Table</title>
+		<!--
+			Brandon Ramirez
+			CIS-14a JavaScript
+			9/28/15 v1.0
+			Purpose: To create a 5-column paycheck table
+		-->
+		<script type="text/javascript" src="functions.js"></script>
+		<script type="text/javascript">
+			//Declare variables
+			var minHour =  0;
+			var maxHour = 72;
+			var incHour =  1;
+			var payRate = 10; //$/hr
+			var dblTime = 20;
+			var trpTime = 40;
+			var taxRate = .1;
+			//Initialize 2D array
+			var x = [[], [], [], [], []];
+			//Calculate and push values to arrays using
+			//functions called from external file
+			for (var hour = minHour; hour <= maxHour; hour += incHour) {
+				x[0].push(hour);
+				x[1].push(grossPay(hour).toFixed(2));
+				x[2].push(grossRate(x[1][hour], hour).toFixed(2));
+				x[3].push(grossTax(x[1][hour]).toFixed(2));
+				x[4].push(netPay(x[1][hour], x[3][hour]).toFixed(2));
+			}
+		</script>
+		<style type="text/css">
+			table {
+				border-collapse: collapse;
+			} table tr td, table tr th {
+				font-family: Arial, sans-serif;
+				font-size: .8em;
+				font-weight: 700;
+				padding: 10px;
+				border: 1px solid #000;
+				text-align: center;
+			} table tr th {
+				font-size: 1em;
+				background-color: #000;
+				color: #fff;
+				padding: 10px 15px;
+			} table tr:nth-child(even) {
+				background-color: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			createTable(x); //Call externally defined function that writes a table
+		</script>
+	</body>
+</html>
