@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Functions</title>
+		<!--
+			Brandon Ramirez
+			CIS-14a JS Programming
+			09/28/2015 v1.0
+			Purpose: To practice using functions
+		-->
+		<script type="text/javascript" src="js/savings.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//Declare variables
+			var pv = 100; //Present Value in $
+			var i  = .06; //Interest rate %
+			var n  =  12; //Compounding periods in years
+			
+			//Calculate savings
+			var f1 = save1(pv, i, n);
+			var f2 = save2(pv, i, n);
+			var f3 = save3(pv, i, n);
+			var f4 = save4(pv, i, n);
+			var f5 = save5(pv, i, n)
+			
+			//Display Results
+			document.write("<p>Present Value = $" + pv + "</p>");
+			document.write("<p>Interest Rate = " + i * 100 + "%</p>");
+			document.write("<p>Number of Years = " + n + "</p>");
+			document.write("<p>Future Value 1 = $" + f1.toFixed(2) + "</p>");
+			document.write("<p>Future Value 2 = $" + f2.toFixed(2) + "</p>");
+			document.write("<p>Future Value 3 = $" + f3.toFixed(2) + "</p>");
+			document.write("<p>Future Value 4 = $" + f4.toFixed(2) + "</p>");
+			disp(f5);
+			//209.129.8.2
+			//48940
+			//48940cis14a
+			//10000
+			/*
+				Things to try:
+					Make two number input forms that onchange set a parragraphs value to the sum
+					Create a function that creates an array and one that displays it
+			*/
+		</script>
+	</body>
+</html>
