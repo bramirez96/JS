@@ -1,3 +1,10 @@
+//Initialize 2D array for use with following functions
+var x = [[], [], [], [], []];
+var dblTime = 20;
+var trpTime = 40;
+var taxRate = .1;
+
+//Create aarray function is returning not a number to values in the last columns
 function createArray(anArray, min, max, inc) {
 	for (var hour = min, i = 0; hour <= max; hour += inc, i++) {
 		anArray[0].push(hour);
@@ -8,38 +15,44 @@ function createArray(anArray, min, max, inc) {
 	}
 }
 function grossPay(hour) {
-	var x = hour <= dblTime ? hour * payRate :
-	        hour <= trpTime ? dblTime * payRate + (hour - dblTime) * payRate * 2 :
-			                  dblTime * payRate + (hour - trpTime) * payRate * 3 + (trpTime - dblTime) * payRate * 2;
+	var x = hour <= dblTime ? hour * payRate : (
+	        hour <= trpTime ? dblTime * payRate + (hour - dblTime) * payRate * 2 : (
+			                  dblTime * payRate + (hour - trpTime) * payRate * 3 + (trpTime - dblTime) * payRate * 2));
 	return x;
  }
- function grossRate(gross, hour) {
-	 if (hour == 0) return 0;
-	 else return gross / hour;
- }
- function grossTax(gross) {
-	 return gross * taxRate;
- }
- function netPay(gross, tax) {
-	 return gross - tax;
- }
- function createTable(anArray) {
-	 document.write("<table>");
-	 document.write("<tr> \
-						<th>Hours</th>\
-						<th>Gross Pay</th>\
-						<th>Pay Rate</th>\
-						<th>Income Tax</th>\
-						<th>Net Pay</th>\
-					 <tr>");
-	 for (var i = 0; i < anArray[0].length; i++) {
-		 document.write("<tr>\
-							<td>" + anArray[0][i] + "</td> \
-							<td>$" + anArray[1][i] + "</td> \
-							<td>$" + anArray[2][i] + " / hr</td> \
-							<td>$" + anArray[3][i] + "</td> \
-							<td>$" + anArray[4][i] + "</td> \
-						 </tr>")
-	 }
-	 document.write("</table>");
- } 
+function grossRate(gross, hour) {
+	if (hour == 0) return 0;
+	else return gross / hour;
+}
+function grossTax(gross) {
+	return gross * taxRate;
+}
+function netPay(gross, tax) {
+	return gross - tax;
+}
+//Create Table function works
+function createTable(anArray) {
+	var tbl = document.getElementById("tableBody");
+	while (tbl.lastChild) {
+		tbl.removeChild(tbl.lastChild);
+	}
+	for (var i = 0; i < anArray[0].length; i++) {
+		var tr = tbl.insertRow();
+		for (var y = 0; y < anArray.length; y++) {
+			var td = tr.insertCell();
+			td.appendChild(document.createTextNode(anArray[y][i]));
+		}
+	}
+}
+//The problem is in here somewhere....
+function doTheThing() {
+	//Declare Variables
+	minHour = document.getElementById("minHour").value;
+	maxHour = document.getElementById("maxHour").value;
+	incHour = document.getElementById("incHour").value;
+	payRate = document.getElementById("payRate").value; //$/hr
+	//Calculate and push values to arrays using
+	//functions called from external file
+	createArray(x, minHour, maxHour, incHour);
+	createTable(x);
+}

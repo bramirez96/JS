@@ -11,23 +11,24 @@
 		-->
 		<script type="text/javascript" src="functions.js"></script>
 		<script type="text/javascript">
-			//Declare variables
-			var minHour =  0;
-			var maxHour = 75;
-			var incHour =  5;
-			var payRate = 10; //$/hr
 			var dblTime = 20;
 			var trpTime = 40;
+			var minHour = 0;
+			var maxHour = 24;
+			var incHour = 1;
 			var taxRate = .1;
-			//Initialize 2D array
-			var x = [[], [], [], [], []];
-			//Calculate and push values to arrays using
-			//functions called from external file
-			createArray(x, minHour, maxHour, incHour);
+			var payRate = 10;
 		</script>
 		<style type="text/css">
-			table {
+			* {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			} body {
+				padding: 25px;
+			} table {
 				border-collapse: collapse;
+				float: left;
 			} table tr td, table tr th {
 				font-family: Arial, sans-serif;
 				font-size: .8em;
@@ -42,12 +43,40 @@
 				padding: 10px 15px;
 			} table tr:nth-child(even) {
 				background-color: #ccc;
+			} br {
+				line-height: 2em;
+			} form {
+				text-align: right;
+				float: right;
+				overflow: auto;
+				font-family: Arial, sans-serif;
+				font-weight: 700;
+			} form input {
+				width: 100px;
+				border: 1px solid #999;
+				padding: 5px;
 			}
 		</style>
 	</head>
 	<body>
-		<script type="text/javascript">
-			createTable(x); //Call externally defined function that writes a table
-		</script>
+		<form id="info" onsubmit="doTheThing()">
+			Min Hours:      <input id="minHour" type="number" value="0"/><br />
+			Max Hours:      <input id="maxHour" type="number" value="24"/><br />
+			Hour Increment: <input id="incHour" type="number" value="1"/><br />
+			Hourly Wage:    <input id="payRate" type="number" value="10"/><br />
+			<input type="submit" />
+		</form>
+		<table>
+			<thead>
+				<tr>
+					<th>Hours</th>
+					<th>Gross Pay</th>
+					<th>Pay Rate</th>
+					<th>Income Tax</th>
+					<th>Net Pay</th>
+				</tr>
+			</thead>
+			<tbody id="tableBody"></tbody><!-- Will be populated by JS -->
+		</table>
 	</body>
 </html>
