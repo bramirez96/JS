@@ -6,19 +6,10 @@
 		<!--
 			Brandon Ramirez
 			CIS-14a JavaScript
-			9/28/15 v1.0
+			9/28/15 v2.0
 			Purpose: To create a 5-column paycheck table
 		-->
 		<script type="text/javascript" src="functions.js"></script>
-		<script type="text/javascript">
-			var dblTime = 20;
-			var trpTime = 40;
-			var minHour = 0;
-			var maxHour = 24;
-			var incHour = 1;
-			var taxRate = .1;
-			var payRate = 10;
-		</script>
 		<style type="text/css">
 			* {
 				box-sizing: border-box;
@@ -59,12 +50,15 @@
 		</style>
 	</head>
 	<body>
-		<form id="info" onsubmit="doTheThing()">
+		<form id="info">
+			Hourly Wage:    <input id="payRate" type="number" value="10"/><br />
+			Double Time:    <input id="dblTime" type="number" value="20"/><br />
+			Triple Time:    <input id="trpTime" type="number" value="40"/><br />
 			Min Hours:      <input id="minHour" type="number" value="0"/><br />
 			Max Hours:      <input id="maxHour" type="number" value="24"/><br />
 			Hour Increment: <input id="incHour" type="number" value="1"/><br />
-			Hourly Wage:    <input id="payRate" type="number" value="10"/><br />
-			<input type="submit" />
+			Tax Percentage: <input id="taxRate" type="number" value="10"/><br />
+			<input type="button" value="Create Table" onclick="createTable(createArray())" />
 		</form>
 		<table>
 			<thead>
