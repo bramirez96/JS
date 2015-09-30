@@ -1,1 +1,1 @@
-# JavaScript---CSC14a
+# JS
