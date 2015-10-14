@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Form Submit</title>
+		<script type="text/javascript">
+			/**
+			* Brandon Ramirez
+			* Purpose: Do some shit with forms
+			*/
+		</script>
+	</head>
+	<body>
+		<h1>Savings Values</h1>
+		<script type="text/javascript">
+			var savings = new Object;
+			var url=location.href;
+			var info=url.split("?");
+			var data=info[1].split("&");
+			for (var i=0;i<data.length;i++) {
+				var x = data[i].split("=");
+				savings[x[0]] = x[1];
+			}
+			document.write("<p>"+url+"</p>");
+			document.write("<p>"+info+"</p>");
+			document.write("<p>"+data+"</p>");
+			document.write("<p>"+data[1]+"</p>");
+		</script>
+	</body>
+</html>
