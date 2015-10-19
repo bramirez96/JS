@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Some Stuff</title>
+		<script type="text/javascript">
+			/**
+			* Brandon Ramirez 10/19/2015
+			* Purpose: To do some shit
+			*/
+			var shopping_cart = '{"thing": "butts", "quantity": 5, "price": 19.99, "address": "123 Main st."}';
+			var obj = JSON.parse(shopping_cart);
+			for (var key in obj) {
+				document.write(key + ": " + obj[key]);
+			}
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
