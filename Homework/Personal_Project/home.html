@@ -2,29 +2,30 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>My Game</title>
+		<title>Home</title>
 		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
 		<link rel="stylesheet" type="text/css" href="./styles/gameGUI.css" />
-		<!--script type="text/javascript" src="./scripts/main.js"></script-->
+		<script type="text/javascript" src="./scripts/user_info_module.js"></script>
 		<script type="text/javascript">
 			
 		</script>
 	</head>
 	<body>
 		<div class="container">
-			<header id="menuBar">
-				<nav>
-					<ul>
-						<li><a href="./home.html" class="menuItem" title="Home">Home</a></li>
-						<li><a href="./map.html" class="menuItem" title="Map">Map</a></li>
-						<li><a href="./hero.html" class="menuItem" title="Hero">Hero</a></li>
-						<li><a href="./inventory.html" class="menuItem" title="Inventory">Inventory</a></li>
-						<li><a href="./journal.html" class="menuItem" title="Journal">Journal</a></li>
-					</ul>
-				</nav>
+			<header id="menuBar" onload="makeHeader(this)">
+
 			</header>
 			
-			
+			<div class="grid">
+				
+				<div class="col-1-4" id="userModule" onload="makeUserModule()">
+					
+				</div><!-- End .col-1-4 -->
+				<div class="col-3-4" -->
+					
+				</div><!-- End .col-3-4 -->
+				
+			</div><!-- End .grid -->
 			
 		</div><!-- End of .container -->	
 		<footer>
