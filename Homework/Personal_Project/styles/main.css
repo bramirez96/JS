@@ -120,7 +120,12 @@ header:after {
 .col-2-3 {
 	width: 66.66%;
 }
-
+.col-1-2 {
+	width: 50%;
+}
+.col-1-4 {
+	width: 25%;
+}
 
 
 
@@ -135,6 +140,11 @@ footer p {
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
+}
+
+/* Arbitrary Stylings */
+.center {
+	text-align: center;
 }
 
 
