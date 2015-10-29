@@ -6,17 +6,19 @@
 		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
 		<!--script type="text/javascript" src="./scripts/main.js"></script-->
 		<script type="text/javascript">
-			var login = new Object();
-			var url = location.href;
-			var info = url.split("?");
-			var data = info[1].split("&");
-			for (var i = 0; i < data.length; i++) {
-				var x = data[i].split("=");
-				login[x[0]] = x[1];
-			}
-			if (localStorage.getItem(login["user"]) != null) {
-				if (localStorage.getItem(login["user"]) == login["pass"]) {
-					window.location.assign("./home.html");
+			if (location.href.indexOf("?") > -1) {
+				var login = new Object();
+				var url = location.href;
+				var info = url.split("?");
+				var data = info[1].split("&");
+				for (var i = 0; i < data.length; i++) {
+					var x = data[i].split("=");
+					login[x[0]] = x[1];
+				}
+				if (localStorage.getItem(login["user"]) != null) {
+					if (localStorage.getItem(login["user"]) == login["pass"]) {
+						window.location.assign("./home.html");
+					}
 				}
 			}
 		</script>
