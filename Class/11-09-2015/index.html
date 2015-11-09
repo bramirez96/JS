@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Blergh</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/**
+			 * IF PASSWORDS DON'T MATCH, MSG.INNERHTML="PASSWORDS DONT MATCH";
+			 * BE MORE SPECIFIC WITH YOUR PASSWORD ERRORS BITCH
+			 * YOU CAN ENCRYPT WITH SHA1 EXTERNAL JS FUNCTION, DO IT
+			 */
+			 function sha1(x) {
+				//external file yo
+				return x;
+			 }
+			 function encrypt() {
+				var r = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!]).{6-20})/;
+				if (psw2==psw1 && psw1.match(r)!=null) {
+					//You did it right
+					return sha1(psw1);
+				} else if (psw1!=psw2) {
+					//They don't match
+				} else {
+					//Password invalid
+				}
+			 }
+			 //Should have a page that shows all users in a table
+			 //Should be able to edit/delete/sort user table values
+			 function getQuery() {
+				var url = location.href;
+				var info = url.split("?");
+				if (info.length > 1) {
+					var data.split("&");
+					//Then a for loop to further split it but the conditional is the important part
+				}
+			 }
+			 //User links in the table heds for the sorts i.e. href="page.html?sort=name"
+			 //shopping cart is users with a key matched with a list of items
+		</script>
+	</body>
+</html>
