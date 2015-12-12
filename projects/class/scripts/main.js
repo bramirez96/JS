@@ -1,7 +1,7 @@
 //Load functions that do things when page is loaded I suppose
 function loadUsers() {
     if (localStorage.user) var z = localStorage.user;
-    else var z = '{"keys":[0]}';
+    else var z = '{"keys":[]}';
     window.usr = JSON.parse(z);
 }
 function setUser() {
@@ -19,10 +19,25 @@ function setUser() {
     }
 }
 
-
+function checkAdminForm(form) {
+    var ad = form.elements.admin.value;
+    var pw = form.elements.pass.value;
+    var x = true;
+    if (ad != "root") {
+        x = false;
+        $('#adError').text("I'm not sure how you messed this up, but you did.");
+    } else {
+        $('#adError').text("");
+        if (pw != "admin") {
+            x = false;
+            $('#pwError').text("Do you even know how to read?");
+        } else $('#pwError').text("");
+    }
+    return x;
+}
 function checkLoginForm(form) {
-    var em = form.elements['email'].value;
-    var pw = form.elements['pass'].value;
+    var em = form.elements.email.value;
+    var pw = form.elements.pass.value;
     var x = true;
     if (em == "") {
         x = false;
@@ -64,8 +79,7 @@ function checkSignupForm(form) {
     if (!/^[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,}$/i.test(em)) {
         x = false;
         $('#emError').text("*");
-    } else $('#emError').text("");
-    if ($.inArray(em, Object.keys(usr)) != -1) {
+    } else if ($.inArray(em, Object.keys(usr)) != -1) {
         x = false;
         $('#emError').text("* Email already registered");
     } else $('#emError').text("");

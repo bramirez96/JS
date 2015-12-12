@@ -11,9 +11,9 @@ if (!empty($_POST)) {
             "lname": queryString['lname'],
             "uname": queryString['uname'],
             "pass" : queryString['pass'],
-            "key"  : usr['keys'].length
+            "key"  : usr['keys'].length + 1
         }
-        usr['keys'].push(usr['keys'].length);
+        usr['keys'].push(usr['keys'].length + 1);
     }
     var z = JSON.stringify(usr);
     localStorage.user = z;
