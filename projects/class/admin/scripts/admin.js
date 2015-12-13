@@ -17,27 +17,27 @@ function loadUsers() {
 }
 function loadItems(sort) {
     if (typeof localStorage.item === 'undefined') {
-        localStorage.item = '{"0399501487":{"title":"Lord of the Flies","author":"William Golding","genre":"Psychological Thriller"},\
-            "0060850523":{"title":"Brave New World","author":"Aldous Huxley","genre":"Science Fiction"},\
-            "0451524934":{"title":"1984","author":"George Orwell","genre":"Science Fiction"},\
-            "0446310786":{"title":"To Kill a Mockingbird","author":"Harper Lee","genre":"Classics"},\
-            "0140177396":{"title":"Of Mice and Men","author":"John Steinbeck","genre":"Classics"},\
-            "0671042858":{"title":"The Girl Who Loved Tom Gordon","author":"Stephen King","genre":"Psychological Thriller"},\
-            "0143034901":{"title":"The Shadow of the Wind","author":"Carlos Ruiz Zafón","genre":"Suspense"},\
-            "0439023521":{"title":"The Hunger Games","author":"Suzanne Collins","genre":"Suspense"},\
-            "0440418321":{"title":"The Golden Compass","author":"Phillip Pullman","genre":"Fantasy"},\
-            "0060005424":{"title":"Lirael: Daughter of the Clayr","author":"Garth Nix","genre":"Fantasy"},\
-            "0590353403":{"title":"Harry Potter and the Sorceror\'s Stone","author":"J. K. Rowling","genre":"Fantasy"},\
-            "0307474275":{"title":"The Da Vinci Code","author":"Dan Brown","genre":"Mystery"},\
-            "0380729407":{"title":"Something Wicked This Way Comes","author":"Ray Bradbury","genre":"Mystery"},\
-            "0486411095":{"title":"Dracula","author":"Bram Stoker","genre":"Classics"},\
-            "0486264785":{"title":"The Importance of Being Earnest","author":"Oscar Wilde","genre":"Comedy"},\
-            "0440180295":{"title":"Slaughterhouse-Five","author":"Kurt Vonnegut","genre":"Classics"},\
-            "0679720200":{"title":"The Stranger","author":"Albert Camus","genre":"Classics"},\
-            "0316056898":{"title":"Bossypants","author":"Tina Fey","genre":"Comedy"},\
-            "0374530718":{"title":"Sophie\'s World","author":"Jostein Gaarder","genre":"Philosophy"},\
-            "0738704431":{"title":"White is for Magic","author":"Laurie Faria Stolarz","genre":"Fantasy"},\
-            "0375826696":{"title":"Eragon","author":"Christopher Paolini","genre":"Fantasy"}}';
+        localStorage.item = '{"0399501487":{"title":"Lord of the Flies","author":"William Golding","genre":"Psychological Thriller","price":8.99},\
+            "0060850523":{"title":"Brave New World","author":"Aldous Huxley","genre":"Science Fiction","price":12.99},\
+            "0451524934":{"title":"1984","author":"George Orwell","genre":"Science Fiction","price":7.95},\
+            "0446310786":{"title":"To Kill a Mockingbird","author":"Harper Lee","genre":"Classics","price":14.59},\
+            "0140177396":{"title":"Of Mice and Men","author":"John Steinbeck","genre":"Classics","price":6.99},\
+            "0671042858":{"title":"The Girl Who Loved Tom Gordon","author":"Stephen King","genre":"Psychological Thriller","price":7.99},\
+            "0143034901":{"title":"The Shadow of the Wind","author":"Carlos Ruiz Zafón","genre":"Suspense","price":13.85},\
+            "0439023521":{"title":"The Hunger Games","author":"Suzanne Collins","genre":"Suspense","price":15.99},\
+            "0440418321":{"title":"The Golden Compass","author":"Phillip Pullman","genre":"Fantasy","price":9.99},\
+            "0060005424":{"title":"Lirael: Daughter of the Clayr","author":"Garth Nix","genre":"Fantasy","price":11.29},\
+            "0590353403":{"title":"Harry Potter and the Sorceror\'s Stone","author":"J. K. Rowling","genre":"Fantasy","price":15.99},\
+            "0307474275":{"title":"The Da Vinci Code","author":"Dan Brown","genre":"Mystery","price":13.50},\
+            "0380729407":{"title":"Something Wicked This Way Comes","author":"Ray Bradbury","genre":"Mystery","price":10.99},\
+            "0486411095":{"title":"Dracula","author":"Bram Stoker","genre":"Classics","price":8.99},\
+            "0486264785":{"title":"The Importance of Being Earnest","author":"Oscar Wilde","genre":"Comedy","price":6.85},\
+            "0440180295":{"title":"Slaughterhouse-Five","author":"Kurt Vonnegut","genre":"Classics","price":9.75},\
+            "0679720200":{"title":"The Stranger","author":"Albert Camus","genre":"Classics","price":8.89},\
+            "0316056898":{"title":"Bossypants","author":"Tina Fey","genre":"Comedy","price":17.99},\
+            "0374530718":{"title":"Sophie\'s World","author":"Jostein Gaarder","genre":"Philosophy","price":15.25},\
+            "0738704431":{"title":"White is for Magic","author":"Laurie Faria Stolarz","genre":"Fantasy","price":12.99},\
+            "0375826696":{"title":"Eragon","author":"Christopher Paolini","genre":"Fantasy","price":8.79}}';
     }
     window.itm = JSON.parse(localStorage.item);
 }

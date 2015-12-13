@@ -119,8 +119,11 @@ function Cart(obj) {
     else this.cart = {};
     this.email = sessionStorage.email; 
     this.cartNum = 0;
-    for (q in this.cart) {
-        this.cartNum += this.cart[q];
+    for (isbn in this.cart) {
+        this.cartNum += this.cart[isbn];
+        if (this.cart[isbn] === 0) {
+            delete this.cart[isbn];
+        }
     }
 }
 Cart.prototype.addToCart = function(isbn) {
@@ -134,6 +137,11 @@ Cart.prototype.addToCart = function(isbn) {
 }
 Cart.prototype.updateCart = function(isbn) { //This code was hard
     this.newValue = parseInt(document.getElementsByName(isbn)[0].value);
+    if (this.newValue == 0) {
+        if (confirm("Do you want to remove this item from your cart?")) {
+            window.location.reload();
+        }
+    }
     console.log(this.newValue + " " + isbn);
     this.cartNum += this.newValue;
     this.cartNum -= this.cart[isbn];
@@ -144,4 +152,23 @@ Cart.prototype.updateCart = function(isbn) { //This code was hard
     localStorage.cart = JSON.stringify(window.crt);
     sessionStorage.cart = JSON.stringify(this.cart);
     setCart();
+    this.setPrices();
 }
+Cart.prototype.setPrices = function() {
+    this.total = 0;
+    for (var isbn in this.cart) {
+        var txt = itm[isbn].price * this.cart[isbn];
+        $('#' + isbn + '_price').text(txt.toFixed(2));
+        this.total += txt;
+    }
+    $('#total').text(this.total.toFixed(2));
+}
+
+
+
+
+
+
+
+
+

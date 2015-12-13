@@ -10,10 +10,8 @@ if (!empty($_POST)) {
             "fname": queryString['fname'],
             "lname": queryString['lname'],
             "uname": queryString['uname'],
-            "pass" : queryString['pass'],
-            "key"  : usr['keys'].length + 1
-        }
-        usr['keys'].push(usr['keys'].length + 1);
+            "pass" : queryString['pass']
+        };
     }
     var z = JSON.stringify(usr);
     localStorage.user = z;

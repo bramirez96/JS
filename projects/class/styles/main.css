@@ -130,6 +130,9 @@ footer p {
 .col-5-8 {
     width: 62.5%;
 }
+.col-auto {
+    width: auto;
+}
 /* Header */
 header {
 	height: 100px;
@@ -148,7 +151,7 @@ header #logo {
 	height: 75px;
 	font-size: 50px;
 	margin-bottom: 0;
-	line-height: 1.3em;
+	line-height: 1.55em;
 	padding-top: 3px;
 }
 #notLogo nav {
@@ -164,120 +167,124 @@ header nav li {
 /* !Color Scheme and Design */
 body {
 	background-color: #f0f0f4;
-	color: #3a3a36;
-	font-family: "Arial", sans-serif;
+	color: #667077;
+	font-family: "Open Sans";
 	font-weight: 400;
 }
 #header-wrap, #footer-wrap {
-	background-color: #c0ded9;
-	color: #b2c1be;
+	background-color: #242839;
+	color: #667077;
 }
 h1 {
-	color: #3a3a36;
+	color: #242839;
 	font-weight: 600;
 }
 header h1 {
-	color: #c0ded9j;
+	color: #f1b632;
+	font-weight: 900;
+}
+h2 {
+    font-size: 1.75em;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+h2 .tiny {
+    font-size: .5em;
+    font-style: italic;
+    color: #3a4145;
+    font-weight: 400;
+}
+h3 {
+    font-size: 1.25em;
+    margin-bottom: 4px;
+    color: #242839;
+}
+h4 {
+    font-style: italic;
+    margin-bottom: 3px;
+    font-weight: 100;
 }
 a {
 	text-decoration: none;
-	color: #b2c1be;
+	color: #f1b632;
 }
 a:hover, a:active {
-	color: #3a3a36;
-	border-bottom: 1px solid #b2c1be;
+	color: #b5b5b6;
+}
+nav li {
+    font-weight: 100;
 }
 nav a:link, nav a:active, nav a:visited {
-	color: #3a3a36;
+	color: #b5b5b6;
 }
 nav a:hover {
-	color: #3a3a36;
-	border-bottom: 1px solid #3a3a36;
+	color: #f1b632;
+	border-bottom: 1px solid #b5b5b6;
 }
 input[type='submit'], a.button, button {
-	background-color: #c0ded9;
-	color: #3a3a36;
-	font-family: "Arial", sans-serif;
-	font-weight: 600;
+	background-color: #242839;
+	color: #f1b632;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 100;
 	letter-spacing: .03em;
 	font-size: 1em;
-	padding: 8px 10px 5px;
+	padding: 5px 10px;
 	border: 0;
 	margin-top: 15px;
 	cursor: pointer;
-	border: 1px solid #b2c1be;
+	border: 1px solid #242839;
+}
+input[type='submit']:hover, a.button:hover, button:hover {
+	background-color: #f1b632;
+	color: #242839;
 }
 a.button.block {
     display: block;
     width: 12.5%;
     margin: 15px auto;
 }
-input[type='submit']:hover, a.button:hover, button:hover {
-	background-color: #e9ece5;
-	color: #3a3a36;
-}
 button {
-	background-color: #c0ded9;
-	border-color: #c0ded9;
-	padding: 4px 8px 1px;
+	background-color: #242839;
+	padding: 1px 8px;
+	color: #f1b632;
+	font-weight: 900;
+	font-family: "Open Sans";
 }
 button:hover {
-	color: #3a3a36;
+	color: #242839;
+	background-color: #f1b632;
 }
 button.alt {
-	background-color: #e9ece5;
-	color: #3a3a36;
-	border-color: #e9ece5;
+	background-color: #b5b5b6;
+	color: #242839;
+	border-color: #b5b5b6;
 }
 button.alt:hover, button.select.alt {
-	background-color: #c0ded9;
-	border-color: #c0ded9;
-	color: #3a3a36;
+	background-color: #667077;
+	border-color: #667077;
+	color: #242839;
 }
-.center button {
-	padding: 4px 8px 1px;
-}
-.orange {
-	color: #f4a61d;
-}
-.blue {
-	color: #61a3d6;
-}
-.pink {
-	color: #f45848;
-}
-.thin {
-	font-weight: 100;
-}
-.light {
-	font-weight: 200;
-}
-.book {
-	font-weight: 300;
+p button {
+    margin-top: 0;
 }
 
 .list_users ul > li {
-	color: #3a3a36;
+	color: #242839;
 	border: 0;
 	font-style: italic;
-	border-bottom: 1px solid #c0ded9;
+	border-bottom: 1px solid #f1b632;
 	margin-bottom: 10px;
 	font-size: 1.2em;
 	font-weight: 600;
+}
+p {
+    line-height: 1.2em;
+    font-weight: 700;
 }
 
 /* Arbitrary Stylings */
 .float-right {
 	float: right;
-}
-table {
-	width: 100%;
-}
-td {
-	width: 25%;
-}
-td:last-child {
-	width:75%;
 }
 .center {
 	text-align: center;
@@ -285,18 +292,16 @@ td:last-child {
 .left {
 	text-align: left;
 }
+.right {
+    text-align: right;
+}
 .red {
 	color: #F00;
 }
 h1 {
-	font-size: 2em;
+	font-size: 2.5em;
+	font-weight: 900;
 	margin-bottom: 10px;
-}
-.underline_box {
-	border-bottom: 1px solid #3a3d41;
-}
-.underline_box:last-of-type {
-	border-bottom-width: 0;
 }
 .push_bot_5 {
 	margin-bottom: 5px;
@@ -326,22 +331,15 @@ span[id$="Error"] {
 li img {
     height: 150px;
 }
-h2 {
-    font-size: 1.75em;
-    font-weight: 900;
-    margin-bottom: 5px;
-}
-h3 {
-    font-size: 1.25em;
-    margin-bottom: 4px;
-}
-h4 {
-    font-style: italic;
-    margin-bottom: 3px;
-}
 img.frame {
     margin: 15px;
     border: 2px solid #3a3a36;
+}
+.thick {
+    font-weight: 900;
+}
+.dark {
+    color: #242839;
 }
 
 

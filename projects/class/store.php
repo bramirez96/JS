@@ -1,12 +1,12 @@
 <?php
-$page_title = "Home";
+$page_title = "Store";
 include('./mod/header.php');
 ?>
 
 <div class="grid clearfix">
     <div class="col-1-1">
         <ul>
-            <li><h1>Shop</h1></li>
+            <li><h1>Book List</h1></li>
             <span id="books">
             
             </span>
@@ -29,7 +29,7 @@ include('./mod/header.php');
                     <img src="./img/' + isbn + '.jpg" />\
                 </div>\
                 <div class="col-4-5">\
-                    <h2><a href="./view_item.php?isbn=' + isbn + '">' + itm[isbn].title + '</a></h2>\
+                    <h2><a href="./view_item.php?isbn=' + isbn + '">' + itm[isbn].title + '</a><span class="tiny"> (' + itm[isbn].price + ')</span></h2>\
                     <h3>' + itm[isbn].author + '</h3>\
                     <h4>' + itm[isbn].genre + '</h4><br />\
                     <a href="javascript:myCart.addToCart(\'' + isbn + '\');" class="button">Add to Cart</a>\

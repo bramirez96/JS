@@ -14,19 +14,20 @@ include('./mod/header.php');
     </div> <!-- End of .col-1-1 -->
 </div> <!-- End of .grid -->
 <div class="grid clearfix">
+    <div class="col-1-1 right dark">
+        <span class="thick">Total: </span>$<span id="total"></span>
+    </div> <!-- End of .col-1-1 -->
+</div> <!-- End of .grid -->
+<div class="grid clearfix">
     <div class="col-1-1 center">
-        <button id="cart_back">&lt;</button>
-        <span id="cart_range"></span>
-        <button id="cart_next">&gt;</button>
-        <br />
-        <a class="button block">Checkout</a>
+        <a class="button block" href="javascript:alert('There was no reason to include a checkout page...\nSo I didn\'t.')">Checkout</a>
     </div> <!-- End of .col-1-1 -->
 </div> <!-- End of .grid -->
 <script type="text/javascript">
     var c = 1;
     setCart();
     for (var isbn in myCart.cart) {
-        $('#cart').append('<li data-item-num-cart=' + c + '>\
+        $('#cart').append('<li>\
             <div class="grid clearfix">\
                 <div class="col-1-8">\
                     <img src="./img/' + isbn + '.jpg" style="height: 100px;"/>\
@@ -36,18 +37,17 @@ include('./mod/header.php');
                     <h3>' + itm[isbn].author + '</h3>\
                     <h4>' + itm[isbn].genre + '</h4><br />\
                 </div>\
-                <div class="col-1-4">\
+                <div class="col-1-4 right">\
                     <input type="number" min="0" name="' + isbn + '" onchange="myCart.updateCart(this.name)" value="' + myCart.cart[isbn] + '"/>\
                 </div>\
-                <div class="col-1-8">\
-                    PRICE\
+                <div class="col-1-8 right dark">\
+                    $<span id="' + isbn + '_price"></span>\
                 </div>\
             </div>\
         </li>');
         c++;
     }
-    window.count = c;
-    var cart = new Pages("cart", count, 1, 10);
+    myCart.setPrices();
 </script>
 <?
 include('./mod/footer.php');

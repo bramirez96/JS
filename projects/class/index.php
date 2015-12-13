@@ -37,9 +37,9 @@ if (!empty($_POST)) {
 <div class="grid clearfix isLogged" style="display:none;">
     <div class="col-1-1">
         <h1>Welcome, <span class="username"></span>!</h1>
-        <div id="homePage">
+        <p id="homePage">
             
-        </div>
+        </p>
     </div> <!-- End of .col-1-1 -->
 </div>
 <script type="text/javascript">

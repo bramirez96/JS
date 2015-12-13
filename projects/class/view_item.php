@@ -16,6 +16,7 @@ include('./mod/header.php');
     	    <h2>' + itm[isbn].title + '</h2>\
     	    <h3>' + itm[isbn].author + '</h3>\
     	    <h4>' + itm[isbn].genre + '</h4>\
+    	    <h4>' + itm[isbn].price + '</h4>\
         </div><br />\
 	    <a href="javascript:myCart.addToCart(\'' + isbn + '\');" class="button">Add to Cart</a>');
 </script>

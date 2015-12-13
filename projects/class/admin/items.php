@@ -13,46 +13,54 @@ include('./header.php');
             </div> <!-- End of .col-1-1 -->
         </div> <!-- End of .grid -->
         <div class="grid clearfix">
-            <div class="col-1-6">
+            <div class="col-auto">
                 <ul>
                     <li>ISBN</li>
                     <span id="isbn">
                         
                     </span>
                 </ul>
-            </div> <!-- End of .col-1-6 -->
-            <div class="col-1-3">
+            </div> <!-- End of .col-auto -->
+            <div class="col-auto">
                 <ul>
                     <li>Title</li>
                     <span id="title">
                         
                     </span>
                 </ul>
-            </div> <!-- End of .col-1-3 -->
-            <div class="col-1-6">
+            </div> <!-- End of .col-auto -->
+            <div class="col-auto">
                 <ul>
                     <li>Author</li>
                     <span id="author">
                         
                     </span>
                 </ul>
-            </div> <!-- End of .col-1-6 -->
-            <div class="col-1-6">
+            </div> <!-- End of .col-auto -->
+            <div class="col-auto">
                 <ul>
                     <li>Genre</li>
                     <span id="genre">
                         
                     </span>
                 </ul>
-            </div> <!-- End of .col-1-6 -->
-            <div class="col-1-6">
+            </div> <!-- End of .col-auto -->
+            <div class="col-auto">
+                <ul>
+                    <li>Price</li>
+                    <span id="price" class="right">
+                    
+                    </span>
+                </ul>
+            </div> <!-- End of .col-auto -->
+            <div class="col-auto">
                 <ul>
                     <li>Delete</li>
                     <span id="options">
                         
                     </span>
                 </ul>
-            </div> <!-- End of .col-1-6 -->
+            </div> <!-- End of .col-auto -->
         </div> <!-- End of .grid -->
         <div class="grid clearfix">
             <div class="col-1-1 center">
@@ -70,9 +78,10 @@ include('./header.php');
         $('#title').append("<li data-item-num-users=\"" + (x+1) + "\">" + itm[z].title + "</li>");
         $('#author').append("<li data-item-num-users=\"" + (x+1) + "\">" + itm[z].author + "</li>");
         $('#genre').append("<li data-item-num-users=\"" + (x+1) + "\">" + itm[z].genre + "</li>");
+        $('#price').append("<li data-item-num-users=\"" + (x+1) + "\">$" + itm[z].price + "</li>");
         $('#options').append("<li data-item-num-users=\"" + (x+1) + "\"><a href=\"./delete_item.php?isbn=" + encodeURIComponent(z) + "\">Delete</a>");
     }
-    var users = new Pages("users", x, 5, 10);
+    var users = new Pages("users", x, 6, 10);
 </script>
 <?
 include('./footer.php');
