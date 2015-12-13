@@ -72,7 +72,7 @@ include('./header.php');
         $('#genre').append("<li data-item-num-users=\"" + (x+1) + "\">" + itm[z].genre + "</li>");
         $('#options').append("<li data-item-num-users=\"" + (x+1) + "\"><a href=\"./delete_item.php?isbn=" + encodeURIComponent(z) + "\">Delete</a>");
     }
-    var users = new Pages("users", x, 5);
+    var users = new Pages("users", x, 5, 10);
 </script>
 <?
 include('./footer.php');

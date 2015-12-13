@@ -127,6 +127,9 @@ footer p {
 .col-3-8 {
     width: 37.5%;
 }
+.col-5-8 {
+    width: 62.5%;
+}
 /* Header */
 header {
 	height: 100px;
@@ -203,6 +206,11 @@ input[type='submit'], a.button, button {
 	margin-top: 15px;
 	cursor: pointer;
 	border: 1px solid #b2c1be;
+}
+a.button.block {
+    display: block;
+    width: 12.5%;
+    margin: 15px auto;
 }
 input[type='submit']:hover, a.button:hover, button:hover {
 	background-color: #e9ece5;
@@ -319,8 +327,21 @@ li img {
     height: 150px;
 }
 h2 {
-    font-size: 1.5em;
+    font-size: 1.75em;
     font-weight: 900;
+    margin-bottom: 5px;
+}
+h3 {
+    font-size: 1.25em;
+    margin-bottom: 4px;
+}
+h4 {
+    font-style: italic;
+    margin-bottom: 3px;
+}
+img.frame {
+    margin: 15px;
+    border: 2px solid #3a3a36;
 }
 
 

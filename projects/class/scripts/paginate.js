@@ -35,13 +35,13 @@ Sample HTML for 3 cols:
 function O(obj) {
 	return document.getElementById(obj);
 }
-function Pages(name, results, col) {
+function Pages(name, results, col, inc) {
 	this.name = name;
 	this.total  = results;
 	this.cols   = col;
 	this.offset = 0;
-	if (this.total < 10) this.inc = this.total;
-	else this.inc = 10;
+	if (this.total < inc) this.inc = this.total;
+	else this.inc = inc;
 	this.npages = Math.ceil(this.total / this.inc);
 	this.page   = 1;
 	O(this.name + '_back').setAttribute("onclick", this.name + ".stepBack()");

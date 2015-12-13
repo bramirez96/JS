@@ -29,15 +29,16 @@ include('./mod/header.php');
                     <img src="./img/' + isbn + '.jpg" />\
                 </div>\
                 <div class="col-4-5">\
-                    <h2>' + itm[isbn].title + '</h2>\
+                    <h2><a href="./view_item.php?isbn=' + isbn + '">' + itm[isbn].title + '</a></h2>\
                     <h3>' + itm[isbn].author + '</h3>\
-                    <h4>' + itm[isbn].genre + '</h4>\
+                    <h4>' + itm[isbn].genre + '</h4><br />\
+                    <a href="javascript:myCart.addToCart(\'' + isbn + '\');" class="button">Add to Cart</a>\
                 </div>\
             </div>\
         </li>');
         c++;
     }
-    var books = new Pages("books", c, 1);
+    var books = new Pages("books", c, 1, 6);
 </script>
 <?
 include('./mod/footer.php');

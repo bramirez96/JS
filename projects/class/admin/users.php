@@ -65,7 +65,7 @@ include('./header.php');
         $('#email').append("<li data-item-num-users=\"" + (x+1) + "\">" + z + "</li>");
         $('#options').append("<li data-item-num-users=\"" + (x+1) + "\"><a href=\"./delete_user.php?email=" + encodeURIComponent(z) + "\">Delete</a>");
     }
-    var users = new Pages("users", x, 5);
+    var users = new Pages("users", x, 5, 10);
 </script>
 <?
 include('./footer.php');

@@ -4,13 +4,6 @@ function loadUsers() {
     else var z = '{}';
     window.usr = JSON.parse(z);
 }
-function loadItems() {
-    if (typeof localStorage.item !== 'undefined') var z = localStorage.item;
-    else var z = '{}';
-    window.itm = JSON.parse(z);
-}
-
-
 function setUser() {
     if (typeof sessionStorage.user !== 'undefined') {
         $('.isLogged').css('display','inline');
@@ -21,6 +14,24 @@ function setUser() {
     }
 }
 
+function loadCarts() {
+    if (typeof localStorage.cart !== 'undefined') var z = localStorage.cart;
+    else var z = '{"' + sessionStorage.email + '":{}}';
+    window.crt = JSON.parse(z);
+}
+function setCart() {
+    if (typeof window.myCart === 'undefined') window.myCart = new Cart(crt[sessionStorage.email]);
+    sessionStorage.cartNum = myCart.cartNum;
+    $('.cartNum').text(sessionStorage.cartNum);
+}
+
+function loadItems() {
+    if (typeof localStorage.item !== 'undefined') var z = localStorage.item;
+    else var z = '{}';
+    window.itm = JSON.parse(z);
+}
+
+//This stuff is for form validation
 function checkAdminForm(form) {
     var ad = form.elements.admin.value;
     var pw = form.elements.pass.value;
@@ -96,9 +107,41 @@ function checkSignupForm(form) {
     return x;
 }
 
-
-
+//This one... well, it logs you out...
 function logOut() {
 	sessionStorage.clear();
 	window.location.assign("./index.php");
+}
+
+//The following code is all for the Cart() class
+function Cart(obj) {
+    if (typeof obj === 'object') this.cart = obj;
+    else this.cart = {};
+    this.email = sessionStorage.email; 
+    this.cartNum = 0;
+    for (q in this.cart) {
+        this.cartNum += this.cart[q];
+    }
+}
+Cart.prototype.addToCart = function(isbn) {
+    if (typeof this.cart[isbn] ==='undefined') this.cart[isbn] = 1; //Add entry if none exist
+    else this.cart[isbn]++; //Increase quantity if one does
+    this.cartNum++; //Increase quantity to match
+    window.crt[this.email] = this.cart;
+    localStorage.cart = JSON.stringify(window.crt);
+    sessionStorage.cart = JSON.stringify(this.cart);
+    setCart();
+}
+Cart.prototype.updateCart = function(isbn) { //This code was hard
+    this.newValue = parseInt(document.getElementsByName(isbn)[0].value);
+    console.log(this.newValue + " " + isbn);
+    this.cartNum += this.newValue;
+    this.cartNum -= this.cart[isbn];
+    this.cart[isbn] = this.newValue;
+    console.log(this.cart[isbn]);
+    console.log(this.cartNum);
+    window.crt[this.email] = this.cart;
+    localStorage.cart = JSON.stringify(window.crt);
+    sessionStorage.cart = JSON.stringify(this.cart);
+    setCart();
 }

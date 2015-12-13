@@ -37,16 +37,21 @@ if (!empty($_POST)) {
 <div class="grid clearfix isLogged" style="display:none;">
     <div class="col-1-1">
         <h1>Welcome, <span class="username"></span>!</h1>
-        <script type="text/javascript">
-            if (sessionStorage.cartNum == 1) {
-                document.write('You currently have 1 item in your cart.<br />');
-            } else {
-                document.write('You currently have ' + sessionStorage.cartNum + ' items in your cart.<br />');
-            }
-            document.write('<a href="./store.php">Click here</a> to shop some more, or <a href="./cart.php">click here</a> to check out.');
-        </script>
+        <div id="homePage">
+            
+        </div>
     </div> <!-- End of .col-1-1 -->
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (sessionStorage.cartNum == 1) {
+            $('#homePage').append('You currently have 1 book in your cart.<br />');
+        } else {
+            $('#homePage').append('You currently have ' + sessionStorage.cartNum + ' books in your cart.<br />');
+        }
+        $('#homePage').append('<a href="./store.php">Click here</a> to shop some more, or <a href="./cart.php">click here</a> to check out.');
+    });
+</script>
 <?
 include('./mod/footer.php');
 ?>

@@ -1,5 +1,5 @@
 <? # Code to clear $_GET of unwanted user-inputted values
-    $allowed = ['email', 'pass', 'cpass', 'uname', 'fname', 'lname'];
+    $allowed = ['email', 'pass', 'cpass', 'uname', 'fname', 'lname', 'isbn'];
     foreach ($_GET as $key => $value) {
         if (!in_array($key, $allowed)) {
             unset($_GET[$key]);
@@ -10,7 +10,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title><?php echo $page_title . " - Shopping"; ?></title>
+		<title><?php echo $page_title . " - ValueBooks"; ?></title>
 		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!--Might take this out-->
 		<script type="text/javascript" src="./scripts/main.js" /></script>
@@ -18,6 +18,7 @@
 		<script type="text/javascript">
     		loadUsers();
     		loadItems();
+    		loadCarts();
     		var queryString = new Object();
             <?php
                 if (!empty($_POST)) {
@@ -33,6 +34,7 @@
             ?>
     		$(document).ready(function() {
         	    setUser();
+                setCart();
             });
         </script>
 	</head>
@@ -41,7 +43,7 @@
 			<div id="header-wrap">
 				<header class="content">
 					<div id="notLogo">
-						<h1>Shopping</h1>
+						<h1>ValueBooks</h1>
 						<nav>
 							<ul>
     							<div class="notLogged" style="display: none;">
