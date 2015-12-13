@@ -209,22 +209,22 @@ input[type='submit']:hover, a.button:hover, button:hover {
 	color: #3a3a36;
 }
 button {
-	background-color: #f45848;
-	border-color: #f45848;
+	background-color: #c0ded9;
+	border-color: #c0ded9;
 	padding: 4px 8px 1px;
 }
 button:hover {
-	color: #f45848;
+	color: #3a3a36;
 }
 button.alt {
-	background-color: #f0f0f4;
-	color: #61a3d6;
-	border-color: #f0f0f4;
+	background-color: #e9ece5;
+	color: #3a3a36;
+	border-color: #e9ece5;
 }
 button.alt:hover, button.select.alt {
-	background-color: #61a3d6;
-	border-color: #61a3d6;
-	color: #f0f0f4;
+	background-color: #c0ded9;
+	border-color: #c0ded9;
+	color: #3a3a36;
 }
 .center button {
 	padding: 4px 8px 1px;
@@ -314,6 +314,13 @@ ul.dotted {
 }
 span[id$="Error"] {
     color: #F00;
+}
+li img {
+    height: 150px;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: 900;
 }
 
 

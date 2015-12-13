@@ -14,12 +14,19 @@
 		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!--Might take this out-->
 		<script type="text/javascript" src="./scripts/main.js" /></script>
+		<script type="text/javascript" src="./scripts/paginate.js" /></script>
 		<script type="text/javascript">
     		loadUsers();
+    		loadItems();
     		var queryString = new Object();
             <?php
                 if (!empty($_POST)) {
                     foreach ($_POST as $key => $value) {
+                        echo "queryString['$key'] = '$value';\n";
+                    }
+                }
+                if (!empty($_GET)) {
+                    foreach ($_GET as $key => $value) {
                         echo "queryString['$key'] = '$value';\n";
                     }
                 }
@@ -44,8 +51,8 @@
     							</div>
 								<div class="isLogged" style="display:none;">
     								<li><a href="./index.php">Home</a></li>
-    								<li><a href="./store.php">View Items</a></li>
-    								<li><a href="./cart.php">View Cart</a></li>
+    								<li><a href="./store.php">Shop</a></li>
+    								<li><a href="./cart.php">View Cart (<span class="cartNum"></span>)</a></li>
     								<li class="float-right"><a href="javascript:logOut()">Log Out</a></li>
                                     <li class="float-right">Logged in as: <span class="username"></span></li>
 								</div>

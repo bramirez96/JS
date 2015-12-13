@@ -1,11 +1,3 @@
-<? # Code to clear $_GET of unwanted user-inputted values
-    $allowed = ['email', 'pass', 'cpass', 'uname', 'fname', 'lname'];
-    foreach ($_GET as $key => $value) {
-        if (!in_array($key, $allowed)) {
-            unset($_GET[$key]);
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,9 +6,13 @@
 		<link rel="stylesheet" type="text/css" href="../styles/main.css" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><!--Might take this out-->
 		<script type="text/javascript" src="./scripts/admin.js" /></script>
-		<script type="text/javascript" src="./scripts/paginate.js" /></script>
+		<script type="text/javascript" src="../scripts/paginate.js" /></script>
 		<script type="text/javascript">
     		loadUsers();
+            <?php
+                if (empty($_GET)) $sort = "isbn";
+                echo "loadItems('$sort');";
+            ?>
         </script>
 	</head>
 	<body>

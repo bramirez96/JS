@@ -1,21 +1,23 @@
 //Load functions that do things when page is loaded I suppose
 function loadUsers() {
-    if (localStorage.user) var z = localStorage.user;
-    else var z = '{"keys":[]}';
+    if (typeof localStorage.user !== 'undefined') var z = localStorage.user;
+    else var z = '{}';
     window.usr = JSON.parse(z);
 }
+function loadItems() {
+    if (typeof localStorage.item !== 'undefined') var z = localStorage.item;
+    else var z = '{}';
+    window.itm = JSON.parse(z);
+}
+
+
 function setUser() {
     if (typeof sessionStorage.user !== 'undefined') {
-        for (var x = 0; x < $('.isLogged').length; x++) {
-            $('.isLogged').css('display','inline');
-        }
-        for (var x = 0; x < $('.username').length; x++) {
-            $('.username')[x].innerHTML = sessionStorage.user;
-        }
+        $('.isLogged').css('display','inline');
+        $('.username').text(sessionStorage.user);
+        $('.cartNum').text(sessionStorage.cartNum);
     } else {
-        for (var x = 0; x < $('.notLogged').length; x++) {
-            $('.notLogged').css('display','inline');
-        }
+        $('.notLogged').css('display','inline');
     }
 }
 
@@ -93,6 +95,7 @@ function checkSignupForm(form) {
     } else $('#cpError').text("");
     return x;
 }
+
 
 
 function logOut() {
