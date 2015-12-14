@@ -25,14 +25,13 @@ function makeHeader() { //Calls ajax function that loads header module
 	$("#headModule").load("./modules/headModule.html");
 }
 function makeUser() {
-	if (char[key]) { //If user has a character YOU NEED TO REINITIALIZE IT
+	if (typeof char[key] !== 'undefined') { //If user has a character YOU NEED TO REINITIALIZE IT
 		loadUserModule(char[key]);
 	} else { //If user needs to make a character
 		makeNewCharacterModule();
 	}
 }
 function loadUserModule(user) { //Ajax function that loads user module and sets character info
-	user = (typeof user !== "undefined") ? user : curChar;
 	$("#userModule").load("./modules/userModule.html", function() {//REINITIALLIZE IT HERE
 		var n = user;
 		window.curChar = new Character(n.name, n.role, n.bStats, n.stats, n.hp, n.mp, n.xp, n.lvl, n.img);

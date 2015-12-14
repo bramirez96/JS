@@ -18,11 +18,9 @@
 						"Password: <span class='loginInfo'>" + queryString["pass"] + "</span><br /><br />"+
 						"<span class='tiny'><a href='./index.html' title='Click Here'>Click here</a> to login.</span></p>";
 					document.getElementById("success").innerHTML = str;
+					x = JSON.stringify(usr);
+					localStorage.user = x;
 					});
-			});
-			$(window).unload(function() {
-				x = JSON.stringify(usr);
-				localStorage.user = x;
 			});
 		</script>
 	</head>
@@ -45,10 +43,10 @@
 			
 			<div class="grid">
 				<div class="col-2-3" id="success">
-					
+					You've successfully signed up! <a href="./index.html">Log in</a> to play!
 				</div><!-- End col-2-3 -->
 				<div class="col-1-3">
-					test
+					
 				</div><!-- End col-1-3 -->
 			</div>
 			
