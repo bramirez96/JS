@@ -1,4 +1,4 @@
-<?php# Code to clear $_GET of unwanted user-inputted values
+<?php # Code to clear $_GET of unwanted user-inputted values
     $allowed = ['email', 'pass', 'cpass', 'uname', 'fname', 'lname', 'isbn'];
     foreach ($_GET as $key => $value) {
         if (!in_array($key, $allowed)) {

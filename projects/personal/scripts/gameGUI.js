@@ -105,7 +105,7 @@ function checkChar(form) {
 	if (x != "" && x.length > 4) {
 		makeCharacter(x, y);
 		loadUserModule();
-		return false; // !!!!!Has to submit eventually, change this!
+		return true; // !!!!!Has to submit eventually, change this!
 	}
 	else {
 		$("#nameError").css("display", "inline");
