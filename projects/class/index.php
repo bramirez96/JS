@@ -12,7 +12,7 @@ if (!empty($_POST)) {
         sessionStorage.cartNum = 0;
     }
 </script>
-<?
+<?php
 } 
 ?>
 <div class="grid clearfix notLogged" style="display:none;">
@@ -52,6 +52,6 @@ if (!empty($_POST)) {
         $('#homePage').append('<a href="./store.php">Click here</a> to shop some more, or <a href="./cart.php">click here</a> to check out.');
     });
 </script>
-<?
+<?php
 include('./mod/footer.php');
 ?>

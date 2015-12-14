@@ -48,6 +48,6 @@ include('./header.php');
         window.location.assign("./users.php");
     }
 </script>
-<?
+<?php
 include('./footer.php');
 ?>

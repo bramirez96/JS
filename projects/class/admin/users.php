@@ -75,6 +75,6 @@ include('./header.php');
         window.location.assign("../index.php");
     }
 </script>
-<?
+<?php
 include('./footer.php');
 ?>

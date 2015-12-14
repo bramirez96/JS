@@ -40,6 +40,6 @@ include('./mod/header.php');
     }
     var books = new Pages("books", c, 1, 6);
 </script>
-<?
+<?php
 include('./mod/footer.php');
 ?>

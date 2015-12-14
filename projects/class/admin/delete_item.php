@@ -47,6 +47,6 @@ include('./header.php');
         window.location.assign("./items.php");
     }
 </script>
-<?
+<?php
 include('./footer.php');
 ?>

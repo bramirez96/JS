@@ -83,6 +83,6 @@ include('./header.php');
     }
     var users = new Pages("users", x, 6, 10);
 </script>
-<?
+<?php
 include('./footer.php');
 ?>

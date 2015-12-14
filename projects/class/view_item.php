@@ -20,6 +20,6 @@ include('./mod/header.php');
         </div><br />\
 	    <a href="javascript:myCart.addToCart(\'' + isbn + '\');" class="button">Add to Cart</a>');
 </script>
-<?
+<?php
 include('./mod/footer.php');
 ?>

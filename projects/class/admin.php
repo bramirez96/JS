@@ -10,7 +10,7 @@ if (!empty($_POST)) {
         sessionStorage.user = "Admin";
     }
 </script>
-<?
+<?php
 } 
 ?>
 <div class="grid clearfix notLogged" style="display:none;">
@@ -41,6 +41,6 @@ if (!empty($_POST)) {
         </p>
     </div> <!-- End of .col-1-1 -->
 </div>
-<?
+<?php
 include('./mod/footer.php');
 ?>

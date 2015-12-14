@@ -23,7 +23,7 @@ if (!empty($_POST)) {
         </p>
     </div> <!-- End of .col-1-1 -->
 </div> <!-- End of .grid -->
-<?
+<?php
 } else {
 ?>
 <div class="grid clearfix">
@@ -120,7 +120,7 @@ if (!empty($_POST)) {
         </form>
     </div> <!-- End of .col-1-1 -->
 </div> <!-- End of .grid -->
-<?
+<?php
 }
 include('./mod/footer.php');
 ?>
