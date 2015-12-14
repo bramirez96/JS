@@ -338,8 +338,17 @@ img.frame {
 .thick {
     font-weight: 900;
 }
+.thin {
+    font-weight: 100;
+}
+.400 {
+    font-weight: 400;
+}
 .dark {
     color: #242839;
+}
+.yellow {
+    color: #f1b632;
 }
 
 

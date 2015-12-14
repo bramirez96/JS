@@ -5,6 +5,9 @@ include('./header.php');
 <div class="grid clearfix">
     <div class="list_users col-1-1">
         <h1>Users</h1>
+        <p style="margin: 20px 0;">
+            <a class="button" href="javascript:reset_data()">Reset Users and Items</a>
+        </p>
         <div class="grid clearfix">
             <div class="col-1-8">
                 <ul>
@@ -66,6 +69,11 @@ include('./header.php');
         $('#options').append("<li data-item-num-users=\"" + (x+1) + "\"><a href=\"./delete_user.php?email=" + encodeURIComponent(z) + "\">Delete</a>");
     }
     var users = new Pages("users", x, 5, 10);
+    function reset_data() {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.assign("../index.php");
+    }
 </script>
 <?
 include('./footer.php');

@@ -9,9 +9,15 @@
 		<script type="text/javascript" src="../scripts/paginate.js" /></script>
 		<script type="text/javascript">
     		loadUsers();
+    		loadItems('isbn');
+    		var queryString = {};
             <?php
-                if (empty($_GET)) $sort = "isbn";
-                echo "loadItems('$sort');";
+                if (!empty($_GET)) {
+                    foreach ($_GET as $key => $value) {
+                        echo "queryString['$key'] = '$value';";
+                    }
+                }
+                    
             ?>
         </script>
 	</head>

@@ -20,7 +20,7 @@ include('./mod/header.php');
 </div> <!-- End of .grid -->
 <div class="grid clearfix">
     <div class="col-1-1 center">
-        <a class="button block" href="javascript:alert('There was no reason to include a checkout page...\nSo I didn\'t.')">Checkout</a>
+        <a class="button block" href="javascript:checkout()">Checkout</a>
     </div> <!-- End of .col-1-1 -->
 </div> <!-- End of .grid -->
 <script type="text/javascript">
@@ -48,6 +48,13 @@ include('./mod/header.php');
         c++;
     }
     myCart.setPrices();
+    function checkout() {
+        alert("Congrats, you bought stuff.");
+        delete crt[sessionStorage.email];
+        var x = JSON.stringify(crt);
+        localStorage.cart = x;
+        window.location.assign("./index.php");
+    }
 </script>
 <?
 include('./mod/footer.php');

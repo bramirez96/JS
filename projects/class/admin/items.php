@@ -8,7 +8,7 @@ include('./header.php');
         <div class="grid clearfix">
             <div class="col-1-1">
                 <p>
-                    <button>Add Item</button>
+                    <a class="button" href="javascript:alert('I was gonna make this page, but I didn\'t want to write the PHP code for uploading images.')">Add Item</a>
                 </p>
             </div> <!-- End of .col-1-1 -->
         </div> <!-- End of .grid -->
