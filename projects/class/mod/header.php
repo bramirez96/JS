@@ -1,4 +1,4 @@
-<? # Code to clear $_GET of unwanted user-inputted values
+<?php# Code to clear $_GET of unwanted user-inputted values
     $allowed = ['email', 'pass', 'cpass', 'uname', 'fname', 'lname', 'isbn'];
     foreach ($_GET as $key => $value) {
         if (!in_array($key, $allowed)) {
@@ -58,7 +58,7 @@
     								<li class="float-right"><a href="javascript:logOut()">Log Out</a></li>
                                     <li class="float-right">Logged in as: <span class="username"></span></li>
 								</div>
-                                <? /* User JavaScript to display this thing */ ?>
+                                <?php/* User JavaScript to display this thing */ ?>
 							</ul>
 						</nav>
 					</div> <!-- End #notLogo -->
